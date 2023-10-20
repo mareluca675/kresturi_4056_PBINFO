@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long v[10001], n, i, j, k;
+
+int main()
+{
+    cin >> n;
+    
+    for(i = 0; i < n; i ++)
+    {
+        cin >> v[i];
+    }
+    
+    for(i = 0; i < n; i++)
+    {
+        if(i % 2 == 0)
+        {
+            for(j = 0; j < v[i]; j++)
+            {
+                for(k = 0; k < v[i]; k ++)
+                {
+                    cout << (k + j) % v[i] << " ";
+                }
+                cout << '\n';
+            }
+        }
+        
+        else if(i % 2 == 1)
+        {
+            for(j = 0; j < v[i]; j++)
+            {
+                for(k = 0; k < v[i]; k ++)
+                {
+                    cout << (k * j) % v[i] << " ";
+                }
+                cout << '\n';
+            }
+        }
+    }
+    
+    
+    return 0;
+}
